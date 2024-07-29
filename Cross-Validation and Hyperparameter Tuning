@@ -1,0 +1,5 @@
+# Cross-validation using 5-fold CV is already included in the model training above
+# Here is an example of hyperparameter tuning using grid search
+tune_grid <- expand.grid(.mtry = c(2, 4, 6, 8, 10))
+set.seed(1234)
+rf_tuned_model <- train(classe ~ ., data = training_set, method = 'rf', trControl = trainControl(method = 'cv', number = 5), tuneGrid = tune_grid)
