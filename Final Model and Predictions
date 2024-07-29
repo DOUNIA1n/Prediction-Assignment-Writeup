@@ -1,0 +1,9 @@
+# Train final model on the entire training dataset
+set.seed(1234)
+final_rf_model <- train(classe ~ ., data = training, method = 'rf', trControl = trainControl(method = 'cv', number = 5))
+
+# Apply the model to the test dataset
+test_predictions <- predict(final_rf_model, testing)
+
+# Print predictions for the 20 test cases
+print(test_predictions)
