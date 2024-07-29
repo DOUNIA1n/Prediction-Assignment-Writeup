@@ -1,0 +1,13 @@
+---
+title: "Predicting Exercise Manner"
+author: "Your Name"
+date: "2024-07-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(caret)
+library(randomForest)
+library(ggplot2)
+library(dplyr)
