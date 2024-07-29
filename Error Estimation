@@ -1,0 +1,6 @@
+# Evaluate model performance on validation set
+validation_predictions <- predict(rf_tuned_model, validation_set)
+confusion_matrix <- confusionMatrix(validation_predictions, validation_set$classe)
+
+# Print confusion matrix and accuracy
+print(confusion_matrix)
